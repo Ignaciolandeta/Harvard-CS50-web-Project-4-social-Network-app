@@ -1,0 +1,31 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+<!-- The 'register' route displays a registration form to the user, and creates a new user when the form is submitted. -->
+    <h2>Welcome to the Network app! Register your new user here please!</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="username" placeholder="Create a new Username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="enter your Email Address">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="enter a Password (make it safe! include symbols and numbers recommended)">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="confirmation" placeholder="Confirm your Password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Register !!">
+    </form>
+
+    Already have an account? please click here -><a href="{% url 'login' %}">Log In.</a>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <h2>All Posts history</h2>
+    {% if user.is_authenticated %}
+    
+    <!-- New post html <div> form -->
+        <div class="border">
+            <h3>Hi! enter a New Post</h3>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn btn-primary">Save Post!</button>
+            </form>
+        </div>
+    {% endif %}
+    
+    <!-- Posts listing, pagination and edition. All Posts: The “All Posts” link in the navigation bar 
+     should take the user to a page where they can see all posts from all users, with the most recent posts first.
+    Each post should include the username of the poster, the post content itself, 
+    the date and time at which the post was made, and the number of “likes” the post has  -->
+    <div id="posts">
+        {% for post in posts %}
+        <div class="border">
+            <h5>{{ post.user }}</h5>
+            {% if post.user == request.user %}
+                <a href="{% url 'edit' post.id %}">Edit your post</a>
+            {% endif %}
+            <h6>{{ post.post }}</h6>
+            <p>{{ post.date_added }}</p>
+            {% if request.user in post.liked_users.all %}
+                <!-- 'Like' heart emoji 
+                (“Like” and “Unlike”: Users should be able to click a button or link on any post 
+                to toggle whether or not they “like” that post)-->
+                <i class="fa fa-heart like red" data-id="{{ post.id }}"></i>
+            {% else %}
+                <i class="fa fa-heart like" data-id="{{ post.id }}"></i>
+            {% endif %}
+            <span id="post{{ post.id }}">{{ post.liked_users.count }}</span>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

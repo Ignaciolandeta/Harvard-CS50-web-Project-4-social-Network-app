@@ -1,0 +1,64 @@
+.border {
+    border: 3px solid black;
+    padding: 25px;
+    margin: 15px;
+}
+
+.navbar-brand {
+    background-color: azure;
+    border-style: double;
+}
+
+.nav-link {
+    background-color: beige;
+    border-style: dashed;
+}
+
+h2 {
+    color: green;
+}
+
+
+h3 {
+    color: coral;
+}
+
+textarea#id_post.form-control {
+    background: gainsboro;
+}
+
+button.btn.btn-primary {
+    background: black;
+
+}
+
+
+h5 {
+    color: blue;
+}
+
+h6 {
+    color: darkorange;
+}
+
+input.form-control {
+    background: greenyellow;
+}
+
+input.btn.btn-primary {
+    background: deeppink;
+    color: chartreuse;
+}
+
+.body.container-fluid {
+    background: honeydew;
+}
+
+
+.follow-btn {
+    float: right;
+}
+
+.red {
+    color: greenyellow;
+}
