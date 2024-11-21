@@ -3,7 +3,9 @@ Harvard CS50 Web programming with python and javascript
 
 technical Specifications:
 https://cs50.harvard.edu/web/2020/projects/4/network/
-Youtube final product screencast: 
+
+Youtube final product screencast: https://www.youtube.com/watch?v=51VKHsmoGu8
+
 
 Using Python, JavaScript, HTML, and CSS, complete the implementation of a social network that allows users to make posts, follow other users, and “like” posts. You must fulfill the following requirements:
 
